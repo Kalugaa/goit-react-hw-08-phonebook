@@ -1,9 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { clearAuthHeader, logIn, logOut, registerUser, setAuthHeader } from 'api/auth';
 import { addSingleContact, deleteSingleContact, fetchAllContacts } from 'api/contacts';
-import axios from 'axios';
-
-
 
 export const fetchContacts = createAsyncThunk(
     'contacts/fetchAll',
