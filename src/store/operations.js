@@ -9,10 +9,11 @@ export const fetchContacts = createAsyncThunk(
     'contacts/fetchAll',
     async (_, thunkAPI) => {
         try {
-            if (axios.defaults.headers.common.Authorization) {
-                const response = await fetchAllContacts()
-                return response
-            } return
+            setAuthHeader(thunkAPI.getState().auth.token);
+
+            const response = await fetchAllContacts()
+            return response
+
 
         } catch (e) {
             return thunkAPI.rejectWithValue(e.message);

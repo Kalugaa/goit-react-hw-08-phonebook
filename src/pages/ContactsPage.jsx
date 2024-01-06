@@ -17,13 +17,14 @@ const ContactsPage = () => {
     const token = useSelector(getToken)
     useEffect(() => {
         dispatch(fetchContacts(token))
-    }, [dispatch, token])
+    }, [token, dispatch])
 
     const contacts = useSelector(getContacts)
 
 
     const isLoading = useSelector(getIsLoading)
     const isError = useSelector(getError)
+
 
 
 
