@@ -13,12 +13,17 @@ const LogOut = ({ email }) => {
     const handleClick = () => {
         dispatch(logOutThunk())
         navigate('/login')
-
+    }
+    const handleNavigate = () => {
+        navigate('/contacts')
     }
 
     return (<>
         <li>
             <FormButton type='button' onClick={handleClick}>Logout</FormButton>
+        </li>
+        <li>
+            <FormButton type='button' onClick={handleNavigate}>Contacts</FormButton>
         </li>
         <li>
             <StyledP>{email}</StyledP>
